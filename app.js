@@ -10,3 +10,17 @@ const options = {
         'Accept-Charset': 'utf-8'
     }   
 }
+
+const callback_todas_cotacoes = function(erro, res, body) {
+    let json = JSON.parse(body)
+    console.log(json)
+}
+
+const callback_dolar = function(erro, res, body) {
+    let json = JSON.parse(body)
+    cotacao = json.USDBRL['bid']
+    dia = json.USDBRL['create_date']
+    console.log('Dólar = R$ ' + cotacao + ' em: ' + dia)
+}
+
+request(options, callback_dolar)
