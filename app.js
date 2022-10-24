@@ -37,4 +37,8 @@ const callback_bitcoin = function(erro, res, body) {
     console.log('Bitcoin = R$ ' + cotacao + ' em: ' + dia)
 }
 
-request(options, callback_bitcoin)
+setInterval(() => {
+    request(options, callback_dolar)
+    request(options, callback_euro)
+    request(options, callback_bitcoin)    
+}, 30000);
