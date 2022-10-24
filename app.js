@@ -23,4 +23,18 @@ const callback_dolar = function(erro, res, body) {
     console.log('Dólar = R$ ' + cotacao + ' em: ' + dia)
 }
 
-request(options, callback_dolar)
+const callback_euro = function(erro, res, body) {
+    let json = JSON.parse(body)
+    cotacao = json.EURBRL['bid']
+    dia = json.EURBRL['create_date']
+    console.log('Euro = R$ ' + cotacao + ' em: ' + dia)
+}
+
+const callback_bitcoin = function(erro, res, body) {
+    let json = JSON.parse(body)
+    cotacao = json.BTCBRL['bid']
+    dia = json.BTCBRL['create_date']
+    console.log('Bitcoin = R$ ' + cotacao + ' em: ' + dia)
+}
+
+request(options, callback_bitcoin)
