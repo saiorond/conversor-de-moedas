@@ -1,0 +1,9 @@
+body {
+    height: auto;
+    width: auto;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+}
