@@ -1,6 +1,28 @@
-body {
-    height: auto;
-    width: auto;
+.caixa {
+    position: relative;
+}
+
+nav {
+	position: absolute;
+	top: 50px;
+	right: 5px;
+}
+
+nav li {
+	display: inline;
+	margin: 0 0 0 15px;
+}
+
+nav a {
+	color: #000000;
+	font-weight: bold;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #c78c19;
+	text-decoration: underline;
 }
 
 .container {
