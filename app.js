@@ -1,4 +1,5 @@
 const input = document.getElementById('input');
+const botao = document.getElementById('button');
 
 const inputValue = input.value;
 
@@ -24,8 +25,8 @@ const callback_dolar = function(erro, res, body) {
     let json = JSON.parse(body)
     cotacao = json.USDBRL['bid']
     dia = json.USDBRL['create_date']
-    const realDolar = (inputValue * cotacao)
-    realDolar.innerHTML = 'Sua cotação é ';
+    let realDolar = inputValue * cotacao(res);
+    realDolar.innerHTML;
 }
 
 const callback_euro = function(erro, res, body) {
@@ -42,12 +43,16 @@ const callback_bitcoin = function(erro, res, body) {
     console.log('Bitcoin = R$ ' + cotacao + ' em: ' + dia)
 }
 
+const resultado = function() {
+
+}
+
 setInterval(() => {
     request(options, callback_dolar)
     request(options, callback_euro)
     request(options, callback_bitcoin)    
 }, 30000);
 
-input.addEventListener("click", ()  => {
-    callback_dolar()
+botao.addEventListener("click", ()  => {
+    callback_dolar().realDolar;
 })
