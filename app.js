@@ -3,6 +3,7 @@ const botao = document.getElementById('button');
 
 const inputValue = input.value;
 
+
 const request = require('request')
 
 const moedas = 'USD-BRL,EUR-BRL,BTC-BRL'
@@ -25,8 +26,8 @@ const callback_dolar = function(erro, res, body) {
     let json = JSON.parse(body)
     cotacao = json.USDBRL['bid']
     dia = json.USDBRL['create_date']
-    let realDolar = inputValue * cotacao(res);
-    realDolar.innerHTML;
+    let realDolar = (inputValue * cotacao(res));
+    console.log(realDolar);
 }
 
 const callback_euro = function(erro, res, body) {
@@ -41,10 +42,6 @@ const callback_bitcoin = function(erro, res, body) {
     cotacao = json.BTCBRL['bid']
     dia = json.BTCBRL['create_date']
     console.log('Bitcoin = R$ ' + cotacao + ' em: ' + dia)
-}
-
-const resultado = function() {
-
 }
 
 setInterval(() => {
