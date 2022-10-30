@@ -30,11 +30,14 @@ nav li {
 	margin: 0 0 0 15px;
 }
 
-nav a {
-	color: blanchedalmond;
+nav button {
+	background-color: rgb(29, 36, 68);
+    color: blanchedalmond;
+    border: none;
 	font-weight: bold;
 	font-size: 20px;
 	text-decoration: none;
+    cursor: pointer;
 }
 
 nav a:hover {
